@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- SDK 必须的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--可选权限-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 如果接入了视频相关的广告, 请务必添加，否则可能出现视频广告黑屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Build.VERSION.SDK_INT >= Build.VERSION_CODES.R 需要单独声请此权限-->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <!--TaKu SDK通用 必要权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--中国区SDK必要权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+
+
+    <application
+        android:name="com.mess.ad.App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:hardwareAccelerated="true"
+        tools:replace="android:allowBackup"
+        tools:targetApi="31">
+        <activity
+            android:name="com.mess.ad.SplashActivity"
+            android:exported="true">
+
+        </activity>
+        <meta-data android:name="main_activity" android:value="com.mess.ad.GameActivity"/>
+        <activity android:name="com.mess.ad.GameActivity"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".TestActivity"/>
+        <provider
+            android:authorities="${applicationId}.VivoUnionProvider"
+            android:name="com.vivo.unionsdk.VivoUnionProvider"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <meta-data
+            android:name="vivoUnionAppId"
+            android:value="105825573"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+
+    </application>
+
+</manifest>

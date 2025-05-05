@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VivoAD</string>
+    <string name="lpt_back_lib">Back</string>
+    <string name="lpt_agree_button">Agree</string>
+</resources>

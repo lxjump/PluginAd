@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="lpt_dialog" parent="@style/Base.Theme.AppCompat.Light.Dialog">
+        <!-- 自定义窗口背景为透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 对话框四周的阴影 -->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+
+</resources>
