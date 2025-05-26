@@ -15,6 +15,6 @@ Android 接入广告SDK包含很多资源和四大组件相关的逻辑,实现�
 
 ### 资料
 
-[Tencent Shadow框架]: https://github.com/Tencent/Shadow
-[Didi VirtualAPK]: https://github.com/didi/VirtualAPK
+[Tencent Shadow框架]: https://github.com/Tencent/Shadow	"Tencent Shadow框架"
+[Didi VirtualAPK]: https://github.com/didi/VirtualAPK	"Tencent Shadow框架"
 
