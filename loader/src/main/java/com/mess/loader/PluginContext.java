@@ -31,4 +31,9 @@ public class PluginContext extends ContextWrapper {
     public ClassLoader getClassLoader() {
         return pluginClassLoader;
     }
+
+    @Override
+    public String getPackageName() {
+        return "com.mess.ad"; // 插件包名
+    }
 }

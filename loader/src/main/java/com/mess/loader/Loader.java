@@ -51,7 +51,13 @@ public class Loader {
 
     private static ClassLoader pluginClassLoader = null;
 
-    private static Context pluginContext;
+//    @SuppressLint("StaticFieldLeak")
+//    private static Context pluginContext;
+//
+//    @SuppressLint("StaticFieldLeak")
+//    private static Context baseContext;
+
+    private static PluginContextManager contextManager;
 
     private final String sdkManagerName = "com.mess.ad.SDKManager";
 
@@ -60,6 +66,7 @@ public class Loader {
     private Object sdkManagerInstance;
 
     private String pluginPath;
+
 
     private static Loader loaderInstance;
 
@@ -84,12 +91,12 @@ public class Loader {
         Loader.pluginClassLoader = pluginClassLoader;
     }
 
-    public static Context getPluginContext() {
-        return pluginContext;
+    public static PluginContextManager getContextManager() {
+        return contextManager;
     }
 
-    public static void setPluginContext(Context pluginContext) {
-        Loader.pluginContext = pluginContext;
+    public static void setContextManager(PluginContextManager contextManager) {
+        Loader.contextManager = contextManager;
     }
 
     public void onRequestPermissionsResult(Activity activity, int requestCode, String[] permissions, int[] grantResults) {
@@ -256,9 +263,9 @@ public class Loader {
                     hostContext.getResources().getDisplayMetrics(),
                     hostContext.getResources().getConfiguration()
             );
-            pluginContext = new PluginContext(hostContext, pluginResources, assetManager, pluginClassLoader);
+            PluginContext pluginContext = new PluginContext(hostContext, pluginResources, assetManager, pluginClassLoader);
 
-
+            setContextManager(new PluginContextManager(pluginContext, hostContext));
             Log.d("PluginContext", "插件 Context 创建成功: " + pluginContext);
 
             LogUtils.d("插件 Context 创建成功: " + pluginContext);

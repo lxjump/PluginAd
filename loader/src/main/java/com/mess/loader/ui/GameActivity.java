@@ -24,6 +24,7 @@ public class GameActivity extends Activity implements View.OnClickListener {
     private Button floatIcon;
     private Button login;
     private Button startActivity;
+    private Button init;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -51,6 +52,9 @@ public class GameActivity extends Activity implements View.OnClickListener {
         login.setOnClickListener(this);
         startActivity = findViewById(R.id.button6);
         startActivity.setOnClickListener(this);
+        init = findViewById(R.id.button7);
+        init.setOnClickListener(this);
+
 
     }
 
@@ -73,6 +77,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
         } else if (v == startActivity) {
             Log.d(TAG, "startActivity");
             Loader.getLoaderInstance().callStartActivityTest(this);
+        } else if (v == init) {
+
         }
     }
 }

@@ -25,8 +25,8 @@ public class ResourceHookManager {
     private static Resources multiResources;
 
     public static void init(Context context, String apkFilePath) {
-        preloadResource(context, apkFilePath);
-//        preloadResource_backup(context, apkFilePath);
+//        preloadResource(context, apkFilePath);
+        preloadResource_backup(context, apkFilePath);
     }
 
     private synchronized static void preloadResource(Context context, String apkFilePath) {

@@ -2,6 +2,8 @@ package com.mess.loader;
 
 import android.util.Log;
 
+import com.mess.loader.utils.LogUtils;
+
 /**
  *
  */
@@ -27,6 +29,7 @@ public class BaseClassLoader extends ClassLoader{
             return baseClassLoader.loadClass(name);
         } catch (ClassNotFoundException e) {
             // 如果插件中没有，再从宿主加载
+            LogUtils.d("plugin not found class " + name);
             return super.loadClass(name, resolve);
         }
     }

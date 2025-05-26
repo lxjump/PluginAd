@@ -54,6 +54,9 @@ android {
 //        dirs 'libs' // 指定 AAR 文件路径
 //    }
 
+    aaptOptions {
+        additionalParameters "--package-id", "0x7E", "--allow-reserved-package-id"
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11

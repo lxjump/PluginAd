@@ -354,6 +354,14 @@ public class AMSHookManager {
         }
 
 
+        public static Intent findIntentInArgs(Object[] args) {
+            for (Object arg : args) {
+                if (arg instanceof Intent) {
+                    return (Intent) arg;
+                }
+            }
+            return null;
+        }
     }
 
 

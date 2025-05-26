@@ -90,12 +90,12 @@ public class AdManager {
 
                     @Override
                     public boolean isCanUseImsi() { //是否允许获取 imsi，默认不允许
-                        return false;
+                        return super.isCanUseImsi();
                     }
 
                     @Override
                     public boolean isCanUseApplist() { //是否允许获取应用列表，默认允许
-                        return false;
+                        return super.isCanUseApplist();
                     }
 
                     @Override
